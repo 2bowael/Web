@@ -1,32 +1,446 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div><img src="C:\2bo_wael\Web\Graduation project - Web development\Graduation project\Fylo dark theme landing page\images\illustration-intro.png" alt="illustration-intro">
-    
-    <h2>All your files in one secure location,<br>
-    accessible anywhere.</h2>
-    
-    <p class="p1">Fylo stores all your most important files in one secure location.<br>
-    Access them wherever you need, share an collabrate with <br>
-    friends family, co-workers.</p>
-    
-    <button>Get started</button><br>
-    </div>
-    <div>
-        <img src="C:\2bo_wael\Web\Graduation project - Web development\Graduation project\Fylo dark theme landing page\images\icon-access-anywhere.svg" alt="">
-        <p class="small heads">Access your files, anywhere</p>
-        <p class="small paragraphs">The ability to use a smart phone, tablet, or computer <br>
-        to access your account means your files follow you <br>
-        everywhere.</p><br>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fylo Dark Theme</title>
 
-        <img src="C:\2bo_wael\Web\Graduation project - Web development\Graduation project\Fylo dark theme landing page\images\icon-security.svg" alt="">
-        <p class="small heads">2-factor authentication and user-controlled encryption are <br>
-            just a couple</p>
-    </div>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--main-bg:#1c2431;
+--section-bg:#181f2a;
+--footer-bg:#0b1523;
+--cyan:#65e2d9;
+--blue:#339ecc;
+--light:#ffffff;
+--muted:#c0c5d1;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Open Sans',sans-serif;
+background:var(--main-bg);
+color:var(--light);
+line-height:1.6;
+}
+
+.container{
+width:90%;
+max-width:1100px;
+margin:auto;
+}
+
+section{
+padding:80px 0;
+}
+
+/* HEADER */
+header{
+padding:30px 0;
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.nav-links a{
+color:var(--light);
+margin-left:30px;
+text-decoration:none;
+font-size:14px;
+opacity:.8;
+}
+
+.nav-links a:hover{
+opacity:1;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+position:relative;
+padding-bottom:140px;
+}
+
+.hero img{
+max-width:500px;
+width:100%;
+margin-bottom:30px;
+}
+
+.hero h1{
+font-size:36px;
+margin:30px 0;
+}
+
+.hero p{
+color:var(--muted);
+max-width:600px;
+margin:auto;
+}
+
+.btn{
+display:inline-block;
+margin-top:25px;
+padding:14px 40px;
+border-radius:30px;
+background:linear-gradient(to right,var(--cyan),var(--blue));
+color:#000;
+font-weight:600;
+text-decoration:none;
+transition:.3s;
+}
+
+.btn:hover{
+opacity:.85;
+}
+
+.wave{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:120px;
+background:var(--section-bg);
+border-top-left-radius:50% 40px;
+border-top-right-radius:50% 40px;
+}
+
+/* FEATURES */
+.features{
+background:var(--section-bg);
+text-align:center;
+}
+
+.features-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:60px 80px;
+margin-top:60px;
+max-width:800px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.feature img{
+margin-bottom:20px;
+}
+
+/* PRODUCTIVE */
+.productive{
+background:var(--section-bg);
+}
+
+.productive .container{
+display:grid;
+grid-template-columns:1.2fr 1fr;
+gap:80px;
+align-items:center;
+}
+
+.productive img{
+width:100%;
+max-width:600px;
+display:block;
+margin:auto;
+}
+
+.productive h2{
+font-size:32px;
+margin-bottom:20px;
+}
+
+.productive p{
+color:var(--muted);
+margin:15px 0;
+}
+
+.productive a{
+color:var(--cyan);
+text-decoration:none;
+border-bottom:1px solid var(--cyan);
+padding-bottom:3px;
+}
+
+/* TESTIMONIALS */
+.testimonials{
+background:var(--section-bg);
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.card{
+background:#202a3c;
+padding:30px;
+border-radius:8px;
+font-size:14px;
+}
+
+.card img{
+width:40px;
+height:40px;
+border-radius:50%;
+object-fit:cover;
+margin-top:20px;
+vertical-align:middle;
+}
+
+.card span{
+display:inline-block;
+margin-left:10px;
+vertical-align:middle;
+font-weight:600;
+}
+
+/* CTA */
+.cta{
+background:var(--section-bg);
+position:relative;
+padding-bottom:140px;
+}
+
+.cta-box{
+background:#202a3c;
+padding:50px;
+text-align:center;
+border-radius:10px;
+max-width:700px;
+margin:auto;
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+bottom:-80px;
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.cta-form{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:20px;
+flex-wrap:wrap;
+}
+
+.cta-form input{
+width:60%;
+min-width:250px;
+padding:14px;
+border-radius:25px;
+border:none;
+}
+
+.cta-form button{
+padding:14px 30px;
+border:none;
+border-radius:25px;
+background:linear-gradient(to right,var(--cyan),var(--blue));
+cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+background:var(--footer-bg);
+padding:160px 0 40px;
+font-size:14px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr;
+gap:40px;
+}
+
+footer a{
+color:var(--light);
+text-decoration:none;
+opacity:.8;
+display:block;
+margin-bottom:10px;
+}
+
+footer a:hover{
+opacity:1;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+.features-grid{
+grid-template-columns:1fr;
+}
+
+.productive .container{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+.cta-form{
+flex-direction:column;
+align-items:center;
+}
+
+.cta-form input{
+width:100%;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+<img src="Project\logo.svg" alt="Fylo logo">
+<div class="nav-links">
+<a href="#">Features</a>
+<a href="#">Team</a>
+<a href="#">Sign In</a>
+</div>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<img src="Project/illustration-intro.png" alt="intro">
+<h1>All your files in one secure location, accessible anywhere.</h1>
+<p>Fylo stores all your important files in one secure location. Access them wherever you need.</p>
+<a href="#" class="btn">Get Started</a>
+</div>
+<div class="wave"></div>
+</section>
+
+<section class="features">
+<div class="container">
+<div class="features-grid">
+<div class="feature">
+<img src="Project\icon-access-anywhere.svg" alt="Access anywhere">
+<h3>Access your files, anywhere</h3>
+<p>The ability to use smartphone, tablet, or computer to access your account.</p>
+</div>
+
+<div class="feature">
+<img src="Project\icon-security.svg" alt="Security">
+<h3>Security you can trust</h3>
+<p>2-factor authentication and user-controlled encryption.</p>
+</div>
+
+<div class="feature">
+<img src="Project\icon-collaboration.svg" alt="collaboration">
+<h3>Real-time collaboration</h3>
+<p>Securely share files and folders with friends and colleagues.</p>
+</div>
+
+<div class="feature">
+<img src="Project\icon-any-file.svg" alt="Any file">
+<h3>Store any type of file</h3>
+<p>Upload and store any file type securely.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="productive">
+<div class="container">
+<div>
+<img src="Project/illustration-stay-productive.png" alt="">
+</div>
+<div>
+<h2>Stay productive, wherever you are</h2>
+<p>Never let location be an issue when accessing your files.</p>
+<a href="#">See how Fylo works</a>
+</div>
+</div>
+</section>
+
+<section class="testimonials">
+<div class="container">
+<div class="cards">
+
+<div class="card">
+Fylo has improved our team productivity by an order of magnitude.
+<br>
+<img src="Project/profile-1.jpg" alt="Satish Patel">
+<span>Satish Patel</span>
+</div>
+
+<div class="card">
+Fylo has improved our team productivity by an order of magnitude.
+<br>
+<img src="Project/profile-2.jpg" alt="Bruce McKenzie">
+<span>Bruce McKenzie</span>
+</div>
+
+<div class="card">
+Fylo has improved our team productivity by an order of magnitude.
+<br>
+<img src="Project/profile-3.jpg" alt="Iva Boyd">
+<span>Iva Boyd</span>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="cta">
+<div class="cta-box">
+<h2>Get early access today</h2>
+<p>It only takes a minute to sign up.</p>
+
+<div class="cta-form">
+<input type="email" placeholder="email@example.com">
+<button>Get Started For Free</button>
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="container footer-grid">
+<div>
+<img src="Project\logo.svg" alt="Fylo logo">
+<p>Lorem ipsum dolor sit amet, consectetur <br>
+adipiscing elit, sed do eiusmod tempor <br>
+incididunt ut lapore et dolore magna aliqua </p>
+</div>
+
+<div>
+<a href="#">About Us</a>
+<a href="#">Jobs</a>
+<a href="#">Press</a>
+<a href="#">Blog</a>
+</div>
+
+<div>
+<a href="#">Contact Us</a>
+<a href="#">Terms</a>
+<a href="#">Privacy</a>
+</div>
+
+<div>
+<p>+1-543-123-4567</p>
+<p>example@fylo.com</p>
+</div>
+
+</div>
+</footer>
+
 </body>
 </html>
